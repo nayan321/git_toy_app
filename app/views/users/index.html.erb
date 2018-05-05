@@ -1,29 +1,37 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Users</h1>
-
-<table>
-  <thead>
+<div style="float: right; font-weight: bold; ">
+  <p>
+    <%= link_to 'See All Microblogs', microposts_path %>
+  </p>
+</div>
+<h1>Users List</h1>
+<hr>
+<table border="1|0" style="padding: 5px;">
+  <thead >
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th colspan="3"></th>
+      <th colspan="3"> Operation</th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody >
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr style="padding: 15px;">
+        <td ><%= user.name %></td>
+        <td ><%= user.email %></td>
+        <td style="padding: 15px;background-color:  #dfdecf; font-weight: bold;"><%= link_to 'Show', user %></td>
+        <td style="padding: 15px;background-color: #dfdecf; font-weight: bold;"><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td style="padding: 15px;background-color: #dfdecf; font-weight: bold;"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<p style="font-weight: bold;">
+  <%= link_to 'Add New User   +', new_user_path %>
+</p>
 
-<%= link_to 'New User', new_user_path %>
+<br>
+<br>
